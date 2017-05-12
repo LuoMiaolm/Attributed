@@ -13,7 +13,7 @@
 ```
 
 ##  * UILabel适应文字
-
+##### 需要`UILabel`适应文字，在宽度一定的时候，那就需要计算文字的高度，计算文字高度的方法有以下几种：
 1.此方法适合一行的文字计算，如果行数越多，由于换行时可能会有一个文字显示不下的空隙，导致计算值不准确
 ``` Objective-C
 CGSize size = [text boundingRectWithSize:CGSizeMake(_textLab.frame.size.width, CGFLOAT_MAX)
@@ -41,3 +41,4 @@ paragraphStyle2.lineSpacing = 2;
 _textLab.attributedText = showStr;
 _tHeight = [_textLab sizeThatFits:CGSizeMake(_textLab.frame.size.width, MAXFLOAT)].height;
 ```
+##### 高度计算正确后，将UILabel的布局更新下就完成了。
